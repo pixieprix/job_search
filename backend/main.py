@@ -32,13 +32,6 @@ def job_search_results(job_search_str: str):
 
     return {"jobs": df.to_json()}
 
-#     df = pd.read_sql_query("SELECT * FROM {};".format(table_name), db_conn)
-    
-# #     search_results_inst = job_search(title=job_search_str, location='Singapore', n_pages=1)
-#    # search_results_inst.main()
-#     return {"jobs": df}
-
-
 
 
 if __name__ == "__main__":
