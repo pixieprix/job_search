@@ -3,23 +3,14 @@ import uvicorn
 import sqlite3
 import pandas as pd
 
-
-
 from webscraper import *
 # from database import *
 
-
-        
-
 app = FastAPI()
-
-
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome from Fast API!"}
-
-
 
 
 @app.post("/{job_search_str}")
@@ -31,7 +22,6 @@ def job_search_results(job_search_str: str):
     df = pd.read_sql_query("SELECT * FROM {};".format(table_name), db_conn)
 
     return {"jobs": df.to_json()}
-
 
 
 if __name__ == "__main__":
